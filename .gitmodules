@@ -1,0 +1,12 @@
+[submodule "accreditation-microservice"]
+	path = accreditation-microservice
+	url = https://github.com/kirii626/accreditation-microservice.git
+[submodule "sale-point-microservice"]
+	path = sale-point-microservice
+	url = https://github.com/kirii626/sale-point-microservice.git
+[submodule "eureka-server"]
+	path = eureka-server
+	url = https://github.com/kirii626/eureka-server.git
+[submodule "api-gateway"]
+	path = api-gateway
+	url = https://github.com/kirii626/api-gateway.git
