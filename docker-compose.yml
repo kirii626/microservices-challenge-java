@@ -1,0 +1,69 @@
+services:
+  eureka-server:
+    build:
+      context: ./eureka-server
+    ports:
+      - "${EUREKA_SERVER_PORT}:${EUREKA_SERVER_PORT}"
+    env_file: .env
+    networks:
+      - spring-net
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+    ports:
+      - "${GATEWAY_PORT}:${GATEWAY_PORT}"
+    depends_on:
+      - eureka-server
+    env_file: .env
+    networks:
+      - spring-net
+
+  accreditation-service:
+    build:
+      context: ./accreditation-microservice
+    ports:
+      - "${ACCREDITATION_SERVICE_PORT}:${ACCREDITATION_SERVICE_PORT}"
+    depends_on:
+      - accreditation-db
+      - eureka-server
+    env_file: .env
+    networks:
+      - spring-net
+
+  sale-point-service:
+    build:
+      context: ./sale-point-microservice
+    ports:
+      - "${SALE_POINT_PORT}:${SALE_POINT_PORT}"
+    depends_on:
+      - salepoint-db
+      - eureka-server
+    env_file: .env
+    networks:
+      - spring-net
+
+  accreditation-db:
+    image: postgres:16-alpine
+    container_name: accreditation-db
+    env_file: .env
+    volumes:
+      - accreditation_data:/var/lib/postgresql/data
+    networks:
+      - spring-net
+
+  salepoint-db:
+    image: postgres:16-alpine
+    container_name: salepoint-db
+    env_file: .env
+    volumes:
+      - salepoint_data:/var/lib/postgresql/data
+    networks:
+      - spring-net
+
+volumes:
+  accreditation_data:
+  salepoint_data:
+
+networks:
+  spring-net:
