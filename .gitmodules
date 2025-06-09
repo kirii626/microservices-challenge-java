@@ -10,3 +10,9 @@
 [submodule "api-gateway"]
 	path = api-gateway
 	url = https://github.com/kirii626/api-gateway.git
+[submodule "user-microservice"]
+    path = user-microservice
+    url = https://github.com/kirii626/user-microservice.git
+[submodule "notification-microservice"]
+	path = notification-microservice
+	url = https://github.com/kirii626/notification-service.git
