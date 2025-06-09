@@ -20,11 +20,14 @@ services:
       - spring-net
 
   accreditation-service:
+    environment:
+      SPRING_PROFILES_ACTIVE: "${SPRING_PROFILES_ACTIVE:-docker}"
     build:
       context: ./accreditation-microservice
     ports:
       - "${ACCREDITATION_SERVICE_PORT}:${ACCREDITATION_SERVICE_PORT}"
     depends_on:
+      - redis
       - accreditation-db
       - eureka-server
     env_file: .env
@@ -32,12 +35,41 @@ services:
       - spring-net
 
   sale-point-service:
+    environment:
+      SPRING_PROFILES_ACTIVE: "${SPRING_PROFILES_ACTIVE:-docker}"
     build:
       context: ./sale-point-microservice
     ports:
       - "${SALE_POINT_PORT}:${SALE_POINT_PORT}"
     depends_on:
+      - redis
       - salepoint-db
+      - eureka-server
+    env_file: .env
+    networks:
+      - spring-net
+
+  user-service:
+    environment:
+      SPRING_PROFILES_ACTIVE: "${SPRING_PROFILES_ACTIVE:-docker}"
+    build:
+      context: ./user-microservice
+    ports:
+      - "${USER_SERVICE_PORT}:${USER_SERVICE_PORT}"
+    depends_on:
+      - redis
+      - user-db
+      - eureka-server
+    env_file: .env
+    networks:
+      - spring-net
+
+  notification-service:
+    build:
+      context: ./notification-microservice
+    ports:
+      - "${NOTIFICATION_PORT}:${NOTIFICATION_PORT}"
+    depends_on:
       - eureka-server
     env_file: .env
     networks:
@@ -46,24 +78,68 @@ services:
   accreditation-db:
     image: postgres:16-alpine
     container_name: accreditation-db
+    environment:
+      POSTGRES_DB: accreditationdb
+      POSTGRES_USER: ${ACCREDITATION_DB_USER}
+      POSTGRES_PASSWORD: ${ACCREDITATION_DB_PASSWORD}
     env_file: .env
     volumes:
       - accreditation_data:/var/lib/postgresql/data
     networks:
       - spring-net
 
+  user-db:
+    image: postgres:16-alpine
+    container_name: user-db
+    environment:
+      POSTGRES_DB: userdb
+      POSTGRES_USER: ${USER_DB_USER}
+      POSTGRES_PASSWORD: ${USER_DB_PASSWORD}
+    env_file: .env
+    volumes:
+      - user_data:/var/lib/postgresql/data
+    networks:
+      - spring-net
+
   salepoint-db:
     image: postgres:16-alpine
     container_name: salepoint-db
+    environment:
+      POSTGRES_DB: salepointdb
+      POSTGRES_USER: ${SALEPOINT_DB_USER}
+      POSTGRES_PASSWORD: ${SALEPOINT_DB_PASSWORD}
     env_file: .env
     volumes:
       - salepoint_data:/var/lib/postgresql/data
     networks:
       - spring-net
 
+  redis:
+    image: redis:7.2-alpine
+    container_name: redis
+    ports:
+      - "${SPRING_REDIS_PORT}:${SPRING_REDIS_PORT}"
+    networks:
+      - spring-net
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"    # Puerto para la app
+      - "15672:15672"  # Puerto para la UI de gestión
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    env_file: .env
+    networks:
+      - spring-net
+
 volumes:
   accreditation_data:
   salepoint_data:
+  user_data:
 
 networks:
   spring-net:
+    driver: bridge
