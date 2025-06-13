@@ -26,7 +26,7 @@ This repository hosts a microservices-based ecosystem built for Accenture's Java
 
 ### Microservices Architecture
 
-![Microservices Architecture](https://raw.githubusercontent.com/kirii626/api-gateway/blob/main/docs/images/api-gateway-component-diagram.png)
+![Microservices Architecture](docs/images/components-diagram.png)
 
 ---
 
@@ -200,7 +200,7 @@ Este repositorio alberga un ecosistema basado en microservicios construido para 
 
 ### Arquitectura de Microservicios
 
-![Arquitectura de Microservicios](https://github.com/kirii626/api-gateway/blob/main/docs/api-gateway-component-diagram.puml)
+![Arquitectura de Microservicios](docs/images/components-diagram.png)
 
 ---
 
@@ -231,12 +231,12 @@ Este repositorio alberga un ecosistema basado en microservicios construido para 
 
 | Microservicio        | Función principal                                | Enlace                                           |
 |----------------------|--------------------------------------------------|--------------------------------------------------|
-| Servicio de Usuarios | Registro, login y gestión de roles.              | [README](./user-microservice/README.md)          |
-| Puntos de Venta      | CRUD de puntos y grafo de costos.                | [README](./sale-point-microservice/README.md)    |
-| Acreditaciones       | Crea órdenes y envía notificaciones.             | [README](./accreditation-microservice/README.md) |
-| Notificaciones       | Recibe eventos y envía emails con PDFs.          | [README](./notification-microservice/README.md)  |
-| API Gateway          | Valida JWT y redirige llamadas internas/externas.| [README](./api-gateway/README.md)                |
-| Eureka Server        | Descubrimiento de servicios con Spring Netflix.  | [README](./eureka-server/README.md)              |
+| Servicio de Usuarios | Registro, login y gestión de roles.              | [README](https://github.com/kirii626/user-microservice/blob/main/README.md)          |
+| Puntos de Venta      | CRUD de puntos y grafo de costos.                | [README](https://github.com/kirii626/sale-point-microservice/blob/main/README.md)    |
+| Acreditaciones       | Crea órdenes y envía notificaciones.             | [README](https://github.com/kirii626/accreditation-microservice/blob/main/README.md) |
+| Notificaciones       | Recibe eventos y envía emails con PDFs.          | [README](https://github.com/kirii626/notification-service/blob/main/README.md)  |
+| API Gateway          | Valida JWT y redirige llamadas internas/externas.| [README](https://github.com/kirii626/api-gateway/blob/main/README.md)                |
+| Eureka Server        | Descubrimiento de servicios con Spring Netflix.  | [README](https://github.com/kirii626/eureka-server/blob/main/README.md)              |
 
 ---
 
