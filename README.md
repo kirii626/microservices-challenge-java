@@ -1,12 +1,19 @@
 # 🌐 Microservices Platform - Java Tribe Challenge
 
-# 🇬🇧 README (English)
+
+## 📘 Language Directory
+
+- [English Version](#-readme-english)
+- [Versión en Español](#-readme-español)
+
+
+## 🇬🇧 README (English)
 
 This repository hosts a microservices-based ecosystem built for Accenture's Java Tribe challenge. It includes various services responsible for user management, sale points, accreditations, notifications, routing, and service discovery.
 
 ---
 
-## 📂 Directory / Directorio
+### 📂 Directory / Directorio
 
 - [`user-microservice`](./user-microservice) - User registration, login, and role management 
 - [`sale-point-service`](./sale-point-service) - Sale point and cost connection management 
@@ -17,13 +24,13 @@ This repository hosts a microservices-based ecosystem built for Accenture's Java
 
 ---
 
-## Microservices Architecture
+### Microservices Architecture
 
 ![Microservices Architecture](./api-gateway/docs/images/api-gateway-component-diagram.png)
 
 ---
 
-## 🧰 Technology Stack
+### 🧰 Technology Stack
 
 - Java 21
 - Maven 3.9+
@@ -46,7 +53,7 @@ This repository hosts a microservices-based ecosystem built for Accenture's Java
 
 ---
 
-## 🧩 Microservices Overview
+### 🧩 Microservices Overview
 
 | Microservice         | Description                                      | Link                                             |
 |----------------------|--------------------------------------------------|--------------------------------------------------|
@@ -59,7 +66,7 @@ This repository hosts a microservices-based ecosystem built for Accenture's Java
 
 ---
 
-## Define Environment Variables
+### Define Environment Variables
 
 Create a `.env` file in the root directory with the following variables:
 
@@ -132,7 +139,7 @@ SPRING_REDIS_PORT=your-redis-port
 
 ---
 
-## 📦 Running the Project
+### 📦 Running the Project
 
 >Launch each service in order or use the docker-compose.yml for build and run all the containers together within the same network.
 > First, ensure you have Podman/Docker and Podman/Docker Compose installed.
@@ -157,7 +164,7 @@ docker-compose up
 
 ---
 
-## 🔐 Security
+### 🔐 Security
 
 - JWT-based authentication
 - Internal token headers
@@ -165,22 +172,23 @@ docker-compose up
 
 ---
 
-## 📊 Quality
+### 📊 Quality
 
 - SonarQube & JaCoCo integrated in each service.
 - Coverage targets met > 70% in key services.
 
 ---
 
-# 🇪🇸 README (Español)
-
 # 🧭 Plataforma de Microservicios - Reto Java Tribe
+
+## 🇪🇸 README (Español)
+
 
 Este repositorio alberga un ecosistema basado en microservicios construido para el desafío técnico de la Tribu Java de Accenture. Incluye varios servicios responsables de la gestión de usuarios, puntos de venta, acreditaciones, notificaciones, ruteo y descubrimiento de servicios.
 
 ---
 
-## 📂 Directorio 
+### 📂 Directorio 
 - [`user-microservice`](./user-microservice) - Registro de usuarios, login y gestión de roles
 - [`sale-point-microservice`](./sale-point-service) - Gestión de puntos de venta y conexiones de costos
 - [`accreditation-microservice`](./accreditation-service) - Registro de órdenes y eventos asíncronos de correo
@@ -190,13 +198,13 @@ Este repositorio alberga un ecosistema basado en microservicios construido para 
 
 ---
 
-## Arquitectura de Microservicios
+### Arquitectura de Microservicios
 
 ![Arquitectura de Microservicios](./api-gateway/docs/images/api-gateway-component-diagram.png)
 
 ---
 
-## 🧰 Stack Tecnológico
+### 🧰 Stack Tecnológico
 
 - Java 21
 - Maven 3.9+
@@ -219,7 +227,7 @@ Este repositorio alberga un ecosistema basado en microservicios construido para 
 
 ---
 
-## 🧩 Descripción de Microservicios
+### 🧩 Descripción de Microservicios
 
 | Microservicio        | Función principal                                | Enlace                                           |
 |----------------------|--------------------------------------------------|--------------------------------------------------|
@@ -232,7 +240,7 @@ Este repositorio alberga un ecosistema basado en microservicios construido para 
 
 ---
 
-## Definir Variables de Entorno
+### Definir Variables de Entorno
 
 Crea un archivo `.env` en el directorio raíz con las siguientes variables:
 
@@ -305,7 +313,7 @@ SPRING_REDIS_PORT=your-redis-port
 
 ---
 
-## 📦 Ejecución del Proyecto
+### 📦 Ejecución del Proyecto
 
 > Lanza cada servicio en orden o usa el `docker-compose.yml` para construir y ejecutar todos los contenedores juntos dentro de la misma red.
 > Primero, asegúrate de tener Podman/Docker y Podman/Docker Compose instalados.
@@ -330,7 +338,7 @@ docker-compose up
 
 ---
 
-## 🔐 Seguridad
+### 🔐 Seguridad
 
 - Autenticación JWT
 - Cabeceras internas
@@ -338,7 +346,7 @@ docker-compose up
 
 ---
 
-## 📊 Calidad
+### 📊 Calidad
 
 - Integración de SonarQube y JaCoCo en cada servicio.
 - Cobertura superior al 70% en los servicios principales.
