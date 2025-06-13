@@ -144,12 +144,17 @@ SPRING_REDIS_PORT=your-redis-port
 >Launch each service in order or use the docker-compose.yml for build and run all the containers together within the same network.
 > First, ensure you have Podman/Docker and Podman/Docker Compose installed.
 > Then, define the environment variables in a `.env` file or directly in your terminal.
+>
+> For your first deployment, ensure to set the environment variable `SPRING_PROFILES_ACTIVE` to `init` before bringing up the containers to create tables and load initial data.
+> You can do this in the .env or in the terminal using `$env:SPRING_PROFILES_ACTIVE = "init"`. Then you can switch to `dev` or `docker` as needed with the command provided above.
+> 
 > To run the project, execute:
 
 Podman Compose commands:
 ```bash
 podman compose build 
 ```
+
 ```bash
 podman compose up
 ```
@@ -318,6 +323,10 @@ SPRING_REDIS_PORT=your-redis-port
 > Lanza cada servicio en orden o usa el `docker-compose.yml` para construir y ejecutar todos los contenedores juntos dentro de la misma red.
 > Primero, asegúrate de tener Podman/Docker y Podman/Docker Compose instalados.
 > Luego, define las variables de entorno en un archivo `.env` o directamente en tu terminal.
+> 
+> Para tu primer despliegue, asegúrate de definir la variable de entorno `SPRING_PROFILES_ACTIVE` en modo `init` antes de levantar los contenedores para crear las tablas y cargar los datos iniciales.
+> Puedes hacerlo en el .env o en la terminal mediante `$env:SPRING_PROFILES_ACTIVE = "init"`. Luego, puedes cambiar a `dev` o `docker` según necesites con el comando provisto anteriormente.
+> 
 > Para ejecutar el proyecto, ejecuta:
 
 Podman Compose commands:
