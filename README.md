@@ -26,7 +26,7 @@ This repository hosts a microservices-based ecosystem built for Accenture's Java
 
 ### Microservices Architecture
 
-![Microservices Architecture](./api-gateway/docs/images/api-gateway-component-diagram.png)
+![Microservices Architecture](https://github.com/kirii626/api-gateway/blob/main/docs/api-gateway-component-diagram.puml)
 
 ---
 
@@ -57,12 +57,12 @@ This repository hosts a microservices-based ecosystem built for Accenture's Java
 
 | Microservice         | Description                                      | Link                                             |
 |----------------------|--------------------------------------------------|--------------------------------------------------|
-| User Service         | Handles registration, login, and role logic.     | [README](./user-microservice/)          |
-| Sale Point Service   | Sale point CRUD and cost-based graph logic.      | [README](./sale-point-microservice/README.md)    |
-| Accreditation Service| Registers orders and triggers email via Rabbit.  | [README](./accreditation-microservice/README.md) |
-| Notification Service | Listens and sends email with PDFs (iText).       | [README](./notification-microservice/README.md)  |
-| API Gateway          | Validates JWT and routes external/internal calls.| [README](./api-gateway/README.md)                |
-| Eureka Server        | Service discovery via Spring Netflix Eureka.     | [README](./eureka-server/README.md)              |
+| User Service         | Handles registration, login, and role logic.     | [README](https://github.com/kirii626/user-microservice/blob/main/README.md)          |
+| Sale Point Service   | Sale point CRUD and cost-based graph logic.      | [README](https://github.com/kirii626/sale-point-microservice/blob/main/README.md)    |
+| Accreditation Service| Registers orders and triggers email via Rabbit.  | [README](https://github.com/kirii626/accreditation-microservice/blob/main/README.md) |
+| Notification Service | Listens and sends email with PDFs (iText).       | [README](https://github.com/kirii626/notification-service/blob/main/README.md)  |
+| API Gateway          | Validates JWT and routes external/internal calls.| [README](https://github.com/kirii626/api-gateway/blob/main/README.md)                |
+| Eureka Server        | Service discovery via Spring Netflix Eureka.     | [README](https://github.com/kirii626/eureka-server/blob/main/README.md)              |
 
 ---
 
@@ -200,7 +200,7 @@ Este repositorio alberga un ecosistema basado en microservicios construido para 
 
 ### Arquitectura de Microservicios
 
-![Arquitectura de Microservicios](./api-gateway/docs/images/api-gateway-component-diagram.png)
+![Arquitectura de Microservicios](https://github.com/kirii626/api-gateway/blob/main/docs/api-gateway-component-diagram.puml)
 
 ---
 
