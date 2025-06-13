@@ -57,7 +57,7 @@ This repository hosts a microservices-based ecosystem built for Accenture's Java
 
 | Microservice         | Description                                      | Link                                             |
 |----------------------|--------------------------------------------------|--------------------------------------------------|
-| User Service         | Handles registration, login, and role logic.     | [README](./user-microservice/README.md)          |
+| User Service         | Handles registration, login, and role logic.     | [README](./user-microservice/)          |
 | Sale Point Service   | Sale point CRUD and cost-based graph logic.      | [README](./sale-point-microservice/README.md)    |
 | Accreditation Service| Registers orders and triggers email via Rabbit.  | [README](./accreditation-microservice/README.md) |
 | Notification Service | Listens and sends email with PDFs (iText).       | [README](./notification-microservice/README.md)  |
