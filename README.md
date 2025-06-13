@@ -26,7 +26,7 @@ This repository hosts a microservices-based ecosystem built for Accenture's Java
 
 ### Microservices Architecture
 
-![Microservices Architecture](https://github.com/kirii626/api-gateway/blob/main/docs/api-gateway-component-diagram.puml)
+![Microservices Architecture](https://raw.githubusercontent.com/kirii626/api-gateway/blob/main/docs/api-gateway-component-diagram.puml)
 
 ---
 
